@@ -20,28 +20,33 @@
     var CONFIG = {"hostname":"glassyyang.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="GlassyYang&#39;s Blog">
-<meta property="og:url" content="http://glassyyang.github.io/index.html">
+  <meta name="description" content="C++：类类的范围因为一个类用花括号括起来了，所以这个类也指定了一个scope。 定义在类的定义之外的成员函数：  定义在类定义之外的成员函数，因为通过::指定了该函数是某一个类的成员函数，所以在函数名中::之前的部分，如返回类型是不算在类的范围里面的，因此如果返回类型使用了类中定义的类型，那么需要用::显示指定；而在函数名中::之后的部分，因编译器已经知道该函数是某一类的成员函数，因此不需要加:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C++：类">
+<meta property="og:url" content="http://glassyyang.github.io/2021/05/30/cplusplus-class/index.html">
 <meta property="og:site_name" content="GlassyYang&#39;s Blog">
+<meta property="og:description" content="C++：类类的范围因为一个类用花括号括起来了，所以这个类也指定了一个scope。 定义在类的定义之外的成员函数：  定义在类定义之外的成员函数，因为通过::指定了该函数是某一个类的成员函数，所以在函数名中::之前的部分，如返回类型是不算在类的范围里面的，因此如果返回类型使用了类中定义的类型，那么需要用::显示指定；而在函数名中::之后的部分，因编译器已经知道该函数是某一类的成员函数，因此不需要加:">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-30T14:26:30.000Z">
+<meta property="article:modified_time" content="2021-05-30T14:28:12.038Z">
 <meta property="article:author" content="GlassyYang">
+<meta property="article:tag" content="GlassyYang的C++之路">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://glassyyang.github.io/">
+<link rel="canonical" href="http://glassyyang.github.io/2021/05/30/cplusplus-class/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>GlassyYang's Blog</title>
+  <title>C++：类 | GlassyYang's Blog</title>
   
 
 
@@ -139,9 +144,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -157,10 +163,9 @@
       <meta itemprop="name" content="GlassyYang's Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/30/cplusplus-class/" class="post-title-link" itemprop="url">C++：类</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          C++：类
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -184,7 +189,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="C-：类"><a href="#C-：类" class="headerlink" title="C++：类"></a>C++：类</h1><h2 id="类的范围"><a href="#类的范围" class="headerlink" title="类的范围"></a>类的范围</h2><p>因为一个类用花括号括起来了，所以这个类也指定了一个scope。</p>
+        <h1 id="C-：类"><a href="#C-：类" class="headerlink" title="C++：类"></a>C++：类</h1><h2 id="类的范围"><a href="#类的范围" class="headerlink" title="类的范围"></a>类的范围</h2><p>因为一个类用花括号括起来了，所以这个类也指定了一个scope。</p>
 <h3 id="定义在类的定义之外的成员函数："><a href="#定义在类的定义之外的成员函数：" class="headerlink" title="定义在类的定义之外的成员函数："></a>定义在类的定义之外的成员函数：</h3><blockquote>
 <p> 定义在类定义之外的成员函数，因为通过<code>::</code>指定了该函数是某一个类的成员函数，所以在函数名中<code>::</code>之前的部分，如返回类型是不算在类的范围里面的，因此如果返回类型使用了类中定义的类型，那么需要用<code>::</code>显示指定；而在函数名中<code>::</code>之后的部分，因编译器已经知道该函数是某一类的成员函数，因此不需要加<code>::</code>指定。</p>
 </blockquote>
@@ -242,104 +247,33 @@
 
 <p>花括号的变量必须小于等于聚合类中的变量。花括号中变量的顺序必须和聚合类中成员变量的声明顺序一致。</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/GlassyYang%E7%9A%84C-%E4%B9%8B%E8%B7%AF/" rel="tag"># GlassyYang的C++之路</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://glassyyang.github.io/2021/05/27/linux-package/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="GlassyYang">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="GlassyYang's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/27/linux-package/" class="post-title-link" itemprop="url">linux-package</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-05-27 10:12:54 / 修改时间：10:14:52" itemprop="dateCreated datePublished" datetime="2021-05-27T10:12:54+08:00">2021-05-27</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="文件与文件系统的打包与备份"><a href="#文件与文件系统的打包与备份" class="headerlink" title="文件与文件系统的打包与备份"></a>文件与文件系统的打包与备份</h1><h2 id="1-压缩指令"><a href="#1-压缩指令" class="headerlink" title="1. 压缩指令"></a>1. 压缩指令</h2><h3 id="gzip压缩文件"><a href="#gzip压缩文件" class="headerlink" title="gzip压缩文件"></a>gzip压缩文件</h3><p>用法：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 压缩文件</span></span><br><span class="line">gzip -c filename &gt;gzfilename	# gzip -c参数压缩文件并将压缩后的文件输出到屏幕上；大于号将输出到控制台上的压缩后文件重定向输出到文件。</span><br><span class="line"><span class="meta">#</span><span class="bash"> 其他参数：</span></span><br><span class="line">	-d	# 解压缩</span><br><span class="line">	-t	# 检查压缩文件的一致性</span><br><span class="line">	-v	# 可以显示源文件/压缩文件的压缩比等信息</span><br><span class="line">	-1-9	# 代表压缩等级。-1最快但是压缩比最低，-9最慢但是压缩比最高，默认-6</span><br></pre></td></tr></table></figure>
-
-<p>与之相匹配的命令有：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zcat	# 查看压缩后的文本文件的内容</span><br><span class="line">zmore	# 以more的方式查看压缩后的文本文件的内容</span><br><span class="line">zless	# 以less的方式查看压缩后的文本文件的内容</span><br><span class="line">zgrep	# 查找压缩后的文本文件的内容</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/05/27/linux-package/gzip.png" alt="gzip及配套命令使用示例"></p>
-<h3 id="bzip2-压缩文件"><a href="#bzip2-压缩文件" class="headerlink" title="bzip2 压缩文件"></a>bzip2 压缩文件</h3><p>用法：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 压缩文件</span></span><br><span class="line">bzip2 -z filename</span><br><span class="line"><span class="meta">#</span><span class="bash"> 其他参数：</span></span><br><span class="line">	-c	# 将压缩过程产生的数据输出到屏幕上；</span><br><span class="line">	-d	# 解压缩的参数</span><br><span class="line">	-k	# 保留原始文件</span><br><span class="line">	-z	# 压缩的参数，</span><br><span class="line">	-v	# 可以输出源文件/压缩文件的压缩比等信息</span><br><span class="line">	-1-9	# 压缩比</span><br></pre></td></tr></table></figure>
-
-<p>与之相对应的命令有：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bzcat	# 查看bz压缩文件的内容</span><br><span class="line">bzmore	# 分页查看bz压缩文件的内容</span><br><span class="line">bzless	# 反向查看bz压缩文件的内容</span><br><span class="line">bzgrep	# 查找bz压缩文件的内容</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/05/27/linux-package/bz2.png" alt="bz2使用示例"></p>
-<h3 id="xz-压缩文件"><a href="#xz-压缩文件" class="headerlink" title="xz 压缩文件"></a>xz 压缩文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xz -z filename</span><br><span class="line"><span class="meta">#</span><span class="bash"> 其他参数：</span></span><br><span class="line">	-c	# 将压缩过程产生的数据输出到屏幕上；</span><br><span class="line">	-d	# 解压缩的参数</span><br><span class="line">	-k	# 保留原始文件</span><br><span class="line">	-t	# 测试压缩文件的完整性</span><br><span class="line">	-l	# 列出压缩文件相关信息</span><br><span class="line">	-1-9	# 压缩比</span><br></pre></td></tr></table></figure>
-
-<p>与之相对应的命令有：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xzcat</span><br><span class="line">bzmore</span><br><span class="line">bzless</span><br><span class="line">bzgrep</span><br></pre></td></tr></table></figure>
-
-<p>含义同上。</p>
-<p><img src="/2021/05/27/linux-package/xz.png" alt="xz使用示例"></p>
-<h2 id="2-打包指令"><a href="#2-打包指令" class="headerlink" title="2. 打包指令"></a>2. 打包指令</h2><p>使用指令<code>tar</code>打包并压缩文件夹</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 打包并压缩目录：</span></span><br><span class="line">tar -[z|j|J][cv] -f 待创建的文件名 filename</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看压缩文件内容</span></span><br><span class="line">tar -[z|j|J][tv] -f filename</span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压缩，将文件中的内容解压到特定的目录中。</span></span><br><span class="line">tar -[z|j|J][xv] -f filename -C 目录</span><br></pre></td></tr></table></figure>
-
-<h2 id="XFS-文件系统的备份与还原"><a href="#XFS-文件系统的备份与还原" class="headerlink" title="XFS 文件系统的备份与还原"></a>XFS 文件系统的备份与还原</h2><p>命令<code>xfsdump</code>用来备份完整的<code>XFS</code>文件系统，可以执行增量备份；可以用命令<code>xsfrestore</code>恢复用<code>xfsdump</code>备份的文件系统。</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/27/linux-package/" rel="prev" title="linux-package">
+      <i class="fa fa-chevron-left"></i> linux-package
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -392,6 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-%EF%BC%9A%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">C++：类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E8%8C%83%E5%9B%B4"><span class="nav-number">1.1.</span> <span class="nav-text">类的范围</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%9C%A8%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B9%8B%E5%A4%96%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">定义在类的定义之外的成员函数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89%E5%9C%A8%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B9%8B%E5%86%85%E7%9A%84%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">定义在类的定义之内的成员函数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E4%B8%AD%E7%9A%84%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"><span class="nav-number">1.1.3.</span> <span class="nav-text">类中的类型别名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0%E4%B8%AD%E7%9A%84%E5%90%8D%E5%AD%97%E6%9F%A5%E6%89%BE"><span class="nav-number">1.1.4.</span> <span class="nav-text">成员函数中的名字查找</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A7%94%E6%B4%BE%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">委派构造函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">如何正确使用默认构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.4.</span> <span class="nav-text">类的隐式类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%9A%E5%90%88%E7%B1%BB%EF%BC%88Aggregate-Classes"><span class="nav-number">1.5.</span> <span class="nav-text">聚合类（Aggregate Classes)</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
