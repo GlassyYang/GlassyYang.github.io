@@ -20,24 +20,22 @@
     var CONFIG = {"hostname":"glassyyang.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="1. 压缩指令gzip压缩文件用法： 1234567# 压缩文件gzip -c filename &gt;gzfilename	# gzip -c参数压缩文件并将压缩后的文件输出到屏幕上；大于号将输出到控制台上的压缩后文件重定向输出到文件。# 其他参数：	-d	# 解压缩	-t	# 检查压缩文件的一致性	-v	# 可以显示源文件&#x2F;压缩文件的压缩比等信息	-1-9	# 代表压缩等级。-1最快但是压缩">
+  <meta name="description" content="vim 常用命令指令模式( command line) 移动光标方向 上下左右移动：   h或者左方向键左移，j或者上方向键上移，k或者下方向键下移，l或者右方向键右移动；想要在一个方向上移动多行的话，是数字加上h，j，k，l。 - 和 + 代表移动到非空白字符的上一列和下一列； 0和$代表移动到这一列的第一个和最后一个字符； n + &lt;space&gt; 代表向右移动n个字符； n + &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="文件与文件系统的打包与备份">
-<meta property="og:url" content="http://glassyyang.github.io/2021/05/27/linux-package/index.html">
+<meta property="og:title" content="vim 常用命令">
+<meta property="og:url" content="http://glassyyang.github.io/2021/06/08/vim/index.html">
 <meta property="og:site_name" content="GlassyYang&#39;s Blog">
-<meta property="og:description" content="1. 压缩指令gzip压缩文件用法： 1234567# 压缩文件gzip -c filename &gt;gzfilename	# gzip -c参数压缩文件并将压缩后的文件输出到屏幕上；大于号将输出到控制台上的压缩后文件重定向输出到文件。# 其他参数：	-d	# 解压缩	-t	# 检查压缩文件的一致性	-v	# 可以显示源文件&#x2F;压缩文件的压缩比等信息	-1-9	# 代表压缩等级。-1最快但是压缩">
+<meta property="og:description" content="vim 常用命令指令模式( command line) 移动光标方向 上下左右移动：   h或者左方向键左移，j或者上方向键上移，k或者下方向键下移，l或者右方向键右移动；想要在一个方向上移动多行的话，是数字加上h，j，k，l。 - 和 + 代表移动到非空白字符的上一列和下一列； 0和$代表移动到这一列的第一个和最后一个字符； n + &lt;space&gt; 代表向右移动n个字符； n + &amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://glassyyang.github.io/2021/05/27/linux-package/gzip.png">
-<meta property="og:image" content="http://glassyyang.github.io/2021/05/27/linux-package/bz2.png">
-<meta property="og:image" content="http://glassyyang.github.io/2021/05/27/linux-package/xz.png">
-<meta property="article:published_time" content="2021-05-27T02:12:54.000Z">
-<meta property="article:modified_time" content="2021-06-01T14:41:32.725Z">
+<meta property="og:image" content="http://glassyyang.github.io/2021/06/08/vim/vim_sp.png">
+<meta property="article:published_time" content="2021-06-08T14:42:37.000Z">
+<meta property="article:modified_time" content="2021-06-08T14:45:15.302Z">
 <meta property="article:author" content="GlassyYang">
 <meta property="article:tag" content="Make Linux earsier to use">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://glassyyang.github.io/2021/05/27/linux-package/gzip.png">
+<meta name="twitter:image" content="http://glassyyang.github.io/2021/06/08/vim/vim_sp.png">
 
-<link rel="canonical" href="http://glassyyang.github.io/2021/05/27/linux-package/">
+<link rel="canonical" href="http://glassyyang.github.io/2021/06/08/vim/">
 
 
 <script id="page-configurations">
@@ -50,7 +48,7 @@
   };
 </script>
 
-  <title>文件与文件系统的打包与备份 | GlassyYang's Blog</title>
+  <title>vim 常用命令 | GlassyYang's Blog</title>
   
 
 
@@ -170,7 +168,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://glassyyang.github.io/2021/05/27/linux-package/">
+    <link itemprop="mainEntityOfPage" href="http://glassyyang.github.io/2021/06/08/vim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -183,7 +181,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          文件与文件系统的打包与备份
+          vim 常用命令
         </h1>
 
         <div class="post-meta">
@@ -192,24 +190,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-05-27 10:12:54" itemprop="dateCreated datePublished" datetime="2021-05-27T10:12:54+08:00">2021-05-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-06-01 22:41:32" itemprop="dateModified" datetime="2021-06-01T22:41:32+08:00">2021-06-01</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
+              <time title="创建时间：2021-06-08 22:42:37 / 修改时间：22:45:15" itemprop="dateCreated datePublished" datetime="2021-06-08T22:42:37+08:00">2021-06-08</time>
             </span>
 
           
@@ -230,31 +213,159 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="1-压缩指令"><a href="#1-压缩指令" class="headerlink" title="1. 压缩指令"></a>1. 压缩指令</h2><h3 id="gzip压缩文件"><a href="#gzip压缩文件" class="headerlink" title="gzip压缩文件"></a>gzip压缩文件</h3><p>用法：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 压缩文件</span></span><br><span class="line">gzip -c filename &gt;gzfilename	# gzip -c参数压缩文件并将压缩后的文件输出到屏幕上；大于号将输出到控制台上的压缩后文件重定向输出到文件。</span><br><span class="line"><span class="meta">#</span><span class="bash"> 其他参数：</span></span><br><span class="line">	-d	# 解压缩</span><br><span class="line">	-t	# 检查压缩文件的一致性</span><br><span class="line">	-v	# 可以显示源文件/压缩文件的压缩比等信息</span><br><span class="line">	-1-9	# 代表压缩等级。-1最快但是压缩比最低，-9最慢但是压缩比最高，默认-6</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>与之相匹配的命令有：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zcat	# 查看压缩后的文本文件的内容</span><br><span class="line">zmore	# 以more的方式查看压缩后的文本文件的内容</span><br><span class="line">zless	# 以less的方式查看压缩后的文本文件的内容</span><br><span class="line">zgrep	# 查找压缩后的文本文件的内容</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/05/27/linux-package/gzip.png" alt="gzip及配套命令使用示例"></p>
-<h3 id="bzip2-压缩文件"><a href="#bzip2-压缩文件" class="headerlink" title="bzip2 压缩文件"></a>bzip2 压缩文件</h3><p>用法：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 压缩文件</span></span><br><span class="line">bzip2 -z filename</span><br><span class="line"><span class="meta">#</span><span class="bash"> 其他参数：</span></span><br><span class="line">	-c	# 将压缩过程产生的数据输出到屏幕上；</span><br><span class="line">	-d	# 解压缩的参数</span><br><span class="line">	-k	# 保留原始文件</span><br><span class="line">	-z	# 压缩的参数，</span><br><span class="line">	-v	# 可以输出源文件/压缩文件的压缩比等信息</span><br><span class="line">	-1-9	# 压缩比</span><br></pre></td></tr></table></figure>
-
-<p>与之相对应的命令有：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bzcat	# 查看bz压缩文件的内容</span><br><span class="line">bzmore	# 分页查看bz压缩文件的内容</span><br><span class="line">bzless	# 反向查看bz压缩文件的内容</span><br><span class="line">bzgrep	# 查找bz压缩文件的内容</span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/05/27/linux-package/bz2.png" alt="bz2使用示例"></p>
-<h3 id="xz-压缩文件"><a href="#xz-压缩文件" class="headerlink" title="xz 压缩文件"></a>xz 压缩文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">xz -z filename</span><br><span class="line"><span class="meta">#</span><span class="bash"> 其他参数：</span></span><br><span class="line">	-c	# 将压缩过程产生的数据输出到屏幕上；</span><br><span class="line">	-d	# 解压缩的参数</span><br><span class="line">	-k	# 保留原始文件</span><br><span class="line">	-t	# 测试压缩文件的完整性</span><br><span class="line">	-l	# 列出压缩文件相关信息</span><br><span class="line">	-1-9	# 压缩比</span><br></pre></td></tr></table></figure>
-
-<p>与之相对应的命令有：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">xzcat</span><br><span class="line">bzmore</span><br><span class="line">bzless</span><br><span class="line">bzgrep</span><br></pre></td></tr></table></figure>
-
-<p>含义同上。</p>
-<p><img src="/2021/05/27/linux-package/xz.png" alt="xz使用示例"></p>
-<h2 id="2-打包指令"><a href="#2-打包指令" class="headerlink" title="2. 打包指令"></a>2. 打包指令</h2><p>使用指令<code>tar</code>打包并压缩文件夹</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 打包并压缩目录：</span></span><br><span class="line">tar -[z|j|J][cv] -f 待创建的文件名 filename</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看压缩文件内容</span></span><br><span class="line">tar -[z|j|J][tv] -f filename</span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压缩，将文件中的内容解压到特定的目录中。</span></span><br><span class="line">tar -[z|j|J][xv] -f filename -C 目录</span><br></pre></td></tr></table></figure>
-
-<h2 id="XFS-文件系统的备份与还原"><a href="#XFS-文件系统的备份与还原" class="headerlink" title="XFS 文件系统的备份与还原"></a>XFS 文件系统的备份与还原</h2><p>命令<code>xfsdump</code>用来备份完整的<code>XFS</code>文件系统，可以执行增量备份；可以用命令<code>xsfrestore</code>恢复用<code>xfsdump</code>备份的文件系统。</p>
+        <h1 id="vim-常用命令"><a href="#vim-常用命令" class="headerlink" title="vim 常用命令"></a>vim 常用命令</h1><h2 id="指令模式-command-line"><a href="#指令模式-command-line" class="headerlink" title="指令模式( command line)"></a>指令模式( command line)</h2><ul>
+<li><p><strong>移动光标方向</strong></p>
+<p>上下左右移动：</p>
+<blockquote>
+<ul>
+<li><code>h</code>或者左方向键左移，<code>j</code>或者上方向键上移，<code>k</code>或者下方向键下移，<code>l</code>或者右方向键右移动；想要在一个方向上移动多行的话，是数字加上<code>h</code>，<code>j</code>，<code>k</code>，<code>l</code>。</li>
+<li><code>-</code> 和 <code>+</code> 代表移动到非空白字符的上一列和下一列；</li>
+<li><code>0</code>和<code>$</code>代表移动到这一列的第一个和最后一个字符；</li>
+<li><code>n + &lt;space&gt;</code> 代表向右移动<code>n</code>个字符；</li>
+<li><code>n + &lt;enter&gt;</code> 表示向下移动<code>n</code>行；</li>
+<li><code>L</code>表示移动到屏幕显示的最后一列的第一个字符上面；<code>G</code>表示移动到最后一列，<code>nG</code>表示移动到这个文件的第<code>n</code>列；<code>gg</code>表示移动到第一列，相当于<code>1G</code>；</li>
+</ul>
+</blockquote>
+</li>
+<li><p><input checked disabled type="checkbox">  字符串匹配</p>
+<p>搜索字符串：</p>
+<blockquote>
+<ul>
+<li><code>/word</code> 表示向下搜索字符串<code>word</code>；</li>
+<li><code>？word</code> 表示向上搜索字符串<code>word</code>；</li>
+<li><code>n</code> 表示重复上一次的搜索，<code>N</code>表示反向执行上一次的搜索。</li>
+</ul>
+</blockquote>
+<p>搜索和替换字符串：</p>
+<blockquote>
+<ul>
+<li><code>:n1,n2s/word1/word2/g</code>从<code>n1</code>行到<code>n2</code>行，替换<code>word</code>为<code>word2</code>；</li>
+<li><code>:1,$/word1/word2/g</code>从头到尾替换<code>word1</code>为<code>word2</code>；</li>
+<li><code>:1,$/word1/word2/gc</code>从头到尾替换<code>word1</code>为<code>word2</code>，替换时确认；</li>
+</ul>
+</blockquote>
+</li>
+<li><p><input checked disabled type="checkbox">  删除字符：</p>
+<blockquote>
+<ul>
+<li><p><code>x</code>向后删除一个字符，<code>X</code>向前删除一个字符；<code>nx</code>表示向后删除<code>n</code>个字符。</p>
+</li>
+<li><p><code>dd</code>删除光标所在的一整行；<code>ndd</code>表示向下删除<code>n</code>行；</p>
+</li>
+<li><p><code>d1G</code>表示删除从当前光标开始到文件开头的所有数据；<code>dG</code>表示删除从当前光标开始到文件末尾的所有字符；</p>
+</li>
+<li><p><code>d$</code>表示删除从光标处到行尾的所有字符，<code>d1</code>表示删除从光标处到行首的所有字符</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p><input checked disabled type="checkbox">  复制字符：</p>
+<blockquote>
+<ul>
+<li><code>yy</code>表示复制一整行，<code>nyy</code>表示向下复制<code>n</code>行，<code>y1G</code>和<code>yG</code>分别表示复制光标处到文件开头的内容和光标处到文件末尾的内容；<code>y1</code>表示复制光标处到行首的内容，<code>y$</code>表示复制光标处到行尾的内容</li>
+</ul>
+</blockquote>
+</li>
+<li><p><input checked disabled type="checkbox">  其他操作：</p>
+<blockquote>
+<ul>
+<li><p><code>ZZ</code> 如果文件没有改动则不保存离开，佛祖额保存离开；</p>
+</li>
+<li><p><code>:w filename</code>将内容保存为<code>filename</code>；</p>
+</li>
+<li><p><code>：r filename</code>将<code>filename</code>中的内容添加到光标显示的后面；</p>
+</li>
+<li><p><code>: n1, n2 w filename</code> 将从<code>n1</code>行到<code>n2</code>行的内容保存到文件<code>filename</code>中；</p>
+</li>
+<li><p><code>!command</code>在终端中执行命令<code>command</code></p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="区块选择"><a href="#区块选择" class="headerlink" title="区块选择"></a>区块选择</h2><p>在命令行模式中进入区块选择模式的方法：</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>v</code></td>
+<td>会将光标经过的地方反白选择；</td>
+</tr>
+<tr>
+<td align="center"><code>V</code></td>
+<td>会将光标经过的行反白选择；</td>
+</tr>
+<tr>
+<td align="center"><code>ctrl</code>+<code>v</code></td>
+<td>以矩形的方式选择数据；</td>
+</tr>
+<tr>
+<td align="center"><code>y</code></td>
+<td>复制选择的地方；</td>
+</tr>
+<tr>
+<td align="center"><code>d</code></td>
+<td>删除选择的地方；</td>
+</tr>
+<tr>
+<td align="center"><code>p</code></td>
+<td>将复制到的内容粘贴到光标处；</td>
+</tr>
+</tbody></table>
+<h2 id="多文件编辑和多窗口"><a href="#多文件编辑和多窗口" class="headerlink" title="多文件编辑和多窗口"></a>多文件编辑和多窗口</h2><p>可以通过执行<code>vim file1 file2</code>同时打开多个文件；</p>
+<p>常用命令有：</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>:n</code></td>
+<td>编辑下一个文件</td>
+</tr>
+<tr>
+<td align="center"><code>N</code></td>
+<td>编辑上一个文件</td>
+</tr>
+<tr>
+<td align="center"><code>:files</code></td>
+<td>列出当前打开的所有文件</td>
+</tr>
+</tbody></table>
+<p>输入<code>:sp</code>打开多窗口模式，或者<code>:sp filename</code>打开新的文件；</p>
+<p><img src="/2021/06/08/vim/vim_sp.png" alt="多窗口操作"></p>
+<p>常用的命令有：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>:sp [filename]</code></td>
+<td>分割窗口，打开当前文件或者新的文件<code>filename</code></td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>w</code> -&gt; <code>ctrl</code> + <code>j</code>/<code>下方向键</code></td>
+<td>光标移动到下方的窗口；</td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>w</code> -&gt; <code>ctrl</code> + <code>k</code>/<code>上方向键</code></td>
+<td>光标移动到上方的窗口；</td>
+</tr>
+<tr>
+<td><code>ctrl</code> + <code>w</code> -&gt; <code>q</code></td>
+<td>推出当前窗口；</td>
+</tr>
+</tbody></table>
+<h2 id="关键字补齐功能"><a href="#关键字补齐功能" class="headerlink" title="关键字补齐功能"></a>关键字补齐功能</h2><p><code>ctrl</code> + <code>x</code> -&gt; <code>ctrl</code> + <code>o</code> </p>
 
     </div>
 
@@ -272,11 +383,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/05/30/cplusplus-class/" rel="next" title="C++：类">
-      C++：类 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/06/08/cplusplucalgorithm/" rel="prev" title="C++：通用算法">
+      <i class="fa fa-chevron-left"></i> C++：通用算法
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -335,7 +446,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%8E%8B%E7%BC%A9%E6%8C%87%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">1. 压缩指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gzip%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">gzip压缩文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bzip2-%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="nav-number">1.2.</span> <span class="nav-text">bzip2 压缩文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xz-%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="nav-number">1.3.</span> <span class="nav-text">xz 压缩文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%89%93%E5%8C%85%E6%8C%87%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">2. 打包指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XFS-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%A4%87%E4%BB%BD%E4%B8%8E%E8%BF%98%E5%8E%9F"><span class="nav-number">3.</span> <span class="nav-text">XFS 文件系统的备份与还原</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">vim 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E4%BB%A4%E6%A8%A1%E5%BC%8F-command-line"><span class="nav-number">1.1.</span> <span class="nav-text">指令模式( command line)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E5%9D%97%E9%80%89%E6%8B%A9"><span class="nav-number">1.2.</span> <span class="nav-text">区块选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91%E5%92%8C%E5%A4%9A%E7%AA%97%E5%8F%A3"><span class="nav-number">1.3.</span> <span class="nav-text">多文件编辑和多窗口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97%E8%A1%A5%E9%BD%90%E5%8A%9F%E8%83%BD"><span class="nav-number">1.4.</span> <span class="nav-text">关键字补齐功能</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
