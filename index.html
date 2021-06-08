@@ -185,7 +185,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-06-08 22:42:37 / 修改时间：22:45:15" itemprop="dateCreated datePublished" datetime="2021-06-08T22:42:37+08:00">2021-06-08</time>
+              <time title="创建时间：2021-06-08 22:42:37 / 修改时间：22:46:29" itemprop="dateCreated datePublished" datetime="2021-06-08T22:42:37+08:00">2021-06-08</time>
             </span>
 
           
@@ -213,146 +213,15 @@
 </ul>
 </blockquote>
 </li>
-<li><p><input checked disabled type="checkbox">  字符串匹配</p>
-<p>搜索字符串：</p>
-<blockquote>
-<ul>
-<li><code>/word</code> 表示向下搜索字符串<code>word</code>；</li>
-<li><code>？word</code> 表示向上搜索字符串<code>word</code>；</li>
-<li><code>n</code> 表示重复上一次的搜索，<code>N</code>表示反向执行上一次的搜索。</li>
 </ul>
-</blockquote>
-<p>搜索和替换字符串：</p>
-<blockquote>
-<ul>
-<li><code>:n1,n2s/word1/word2/g</code>从<code>n1</code>行到<code>n2</code>行，替换<code>word</code>为<code>word2</code>；</li>
-<li><code>:1,$/word1/word2/g</code>从头到尾替换<code>word1</code>为<code>word2</code>；</li>
-<li><code>:1,$/word1/word2/gc</code>从头到尾替换<code>word1</code>为<code>word2</code>，替换时确认；</li>
-</ul>
-</blockquote>
-</li>
-<li><p><input checked disabled type="checkbox">  删除字符：</p>
-<blockquote>
-<ul>
-<li><p><code>x</code>向后删除一个字符，<code>X</code>向前删除一个字符；<code>nx</code>表示向后删除<code>n</code>个字符。</p>
-</li>
-<li><p><code>dd</code>删除光标所在的一整行；<code>ndd</code>表示向下删除<code>n</code>行；</p>
-</li>
-<li><p><code>d1G</code>表示删除从当前光标开始到文件开头的所有数据；<code>dG</code>表示删除从当前光标开始到文件末尾的所有字符；</p>
-</li>
-<li><p><code>d$</code>表示删除从光标处到行尾的所有字符，<code>d1</code>表示删除从光标处到行首的所有字符</p>
-</li>
-</ul>
-</blockquote>
-</li>
-<li><p><input checked disabled type="checkbox">  复制字符：</p>
-<blockquote>
-<ul>
-<li><code>yy</code>表示复制一整行，<code>nyy</code>表示向下复制<code>n</code>行，<code>y1G</code>和<code>yG</code>分别表示复制光标处到文件开头的内容和光标处到文件末尾的内容；<code>y1</code>表示复制光标处到行首的内容，<code>y$</code>表示复制光标处到行尾的内容</li>
-</ul>
-</blockquote>
-</li>
-<li><p><input checked disabled type="checkbox">  其他操作：</p>
-<blockquote>
-<ul>
-<li><p><code>ZZ</code> 如果文件没有改动则不保存离开，佛祖额保存离开；</p>
-</li>
-<li><p><code>:w filename</code>将内容保存为<code>filename</code>；</p>
-</li>
-<li><p><code>：r filename</code>将<code>filename</code>中的内容添加到光标显示的后面；</p>
-</li>
-<li><p><code>: n1, n2 w filename</code> 将从<code>n1</code>行到<code>n2</code>行的内容保存到文件<code>filename</code>中；</p>
-</li>
-<li><p><code>!command</code>在终端中执行命令<code>command</code></p>
-</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h2 id="区块选择"><a href="#区块选择" class="headerlink" title="区块选择"></a>区块选择</h2><p>在命令行模式中进入区块选择模式的方法：</p>
-<table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>v</code></td>
-<td>会将光标经过的地方反白选择；</td>
-</tr>
-<tr>
-<td align="center"><code>V</code></td>
-<td>会将光标经过的行反白选择；</td>
-</tr>
-<tr>
-<td align="center"><code>ctrl</code>+<code>v</code></td>
-<td>以矩形的方式选择数据；</td>
-</tr>
-<tr>
-<td align="center"><code>y</code></td>
-<td>复制选择的地方；</td>
-</tr>
-<tr>
-<td align="center"><code>d</code></td>
-<td>删除选择的地方；</td>
-</tr>
-<tr>
-<td align="center"><code>p</code></td>
-<td>将复制到的内容粘贴到光标处；</td>
-</tr>
-</tbody></table>
-<h2 id="多文件编辑和多窗口"><a href="#多文件编辑和多窗口" class="headerlink" title="多文件编辑和多窗口"></a>多文件编辑和多窗口</h2><p>可以通过执行<code>vim file1 file2</code>同时打开多个文件；</p>
-<p>常用命令有：</p>
-<table>
-<thead>
-<tr>
-<th align="center">命令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><code>:n</code></td>
-<td>编辑下一个文件</td>
-</tr>
-<tr>
-<td align="center"><code>N</code></td>
-<td>编辑上一个文件</td>
-</tr>
-<tr>
-<td align="center"><code>:files</code></td>
-<td>列出当前打开的所有文件</td>
-</tr>
-</tbody></table>
-<p>输入<code>:sp</code>打开多窗口模式，或者<code>:sp filename</code>打开新的文件；</p>
-<p><img src="/2021/06/08/vim/vim_sp.png" alt="多窗口操作"></p>
-<p>常用的命令有：</p>
-<table>
-<thead>
-<tr>
-<th>命令</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>:sp [filename]</code></td>
-<td>分割窗口，打开当前文件或者新的文件<code>filename</code></td>
-</tr>
-<tr>
-<td><code>ctrl</code> + <code>w</code> -&gt; <code>ctrl</code> + <code>j</code>/<code>下方向键</code></td>
-<td>光标移动到下方的窗口；</td>
-</tr>
-<tr>
-<td><code>ctrl</code> + <code>w</code> -&gt; <code>ctrl</code> + <code>k</code>/<code>上方向键</code></td>
-<td>光标移动到上方的窗口；</td>
-</tr>
-<tr>
-<td><code>ctrl</code> + <code>w</code> -&gt; <code>q</code></td>
-<td>推出当前窗口；</td>
-</tr>
-</tbody></table>
-<h2 id="关键字补齐功能"><a href="#关键字补齐功能" class="headerlink" title="关键字补齐功能"></a>关键字补齐功能</h2><p><code>ctrl</code> + <code>x</code> -&gt; <code>ctrl</code> + <code>o</code> </p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/06/08/vim/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
